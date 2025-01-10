@@ -83,7 +83,7 @@ const Home = () => {
                                     <FaLinkedin className="mr-2" />
                                     <a
                                         href="https://www.linkedin.com/in/jeremiah-de-bien/"
-                                        className="underline"
+                                        className="hover:underline"
                                     >
                                         Jeremiah de Bien
                                     </a>

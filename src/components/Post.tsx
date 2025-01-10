@@ -134,7 +134,7 @@ const Post = ({ children, date, className = "" }: PostProps) => {
                                 : "Like"}
                             {/* Reactions Menu */}
                             {showReactions && (
-                                <div className="absolute bottom-full left-1/2 mb-2 flex -translate-x-1/2 transform rounded-lg p-2">
+                                <div className="absolute bottom-full left-1/2 mb-2 flex -translate-x-1/2 transform rounded-full bg-gray-800">
                                     {Object.entries(reactions).map(
                                         ([key, { icon, text }]) => (
                                             <div
