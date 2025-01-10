@@ -7,6 +7,7 @@ import {
     FaMapMarkerAlt,
     FaLinkedin,
 } from "react-icons/fa";
+import Post from "../components/Post";
 
 const Home = () => {
     return (
@@ -157,7 +158,7 @@ const Home = () => {
                             </div>
                         </Container> */}
                         <Container>Post</Container>
-                        <Container className="mt-4">Hello World!</Container>
+                        <Post date="November 30, 2024">Hello World!</Post>
                     </div>
                 </div>
             </div>
