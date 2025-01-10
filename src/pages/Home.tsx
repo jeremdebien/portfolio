@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import Post from "../components/Post";
 import ImageBox from "../components/ImageBox";
+import FeaturedCard from "../components/FeaturedCard";
 
 const Home = () => {
     return (
@@ -28,6 +29,7 @@ const Home = () => {
                             src={profile_picture}
                             alt="Profile"
                             className="absolute bottom-0 left-1/2 h-48 w-48 -translate-x-1/2 translate-y-3/4 transform rounded-full border-4 border-gray-800 sm:left-8 sm:translate-x-0"
+                            y_offset={-25}
                         />
                     </div>
 
@@ -94,6 +96,27 @@ const Home = () => {
                             <h2 className="mb-3 text-lg font-bold">
                                 Featured Projects
                             </h2>
+                            <FeaturedCard
+                                imageUrls={[
+                                    "https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/469718213_559281246999361_1247980601863416211_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6MlhvVDVHOQQ7kNvgEYm2JE&_nc_oc=AdhcHqnTGGOByPeeT-TBEDouKvgMAIWfybeyRFBVijZMwR6Qq9-UfmiKFzy0guxgLRs&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=AJYYchalMhGi3m5oEELcsAn&oh=00_AYC23d7gGWLzeTVUvjNKZ0JNqYRdXqck6gPGdBuE8DoZvw&oe=6786F419",
+                                    "https://via.placeholder.com/80",
+                                    "https://via.placeholder.com/80",
+                                ]}
+                                title="Project 1"
+                                description="Project Description"
+                                modalText="Test 1"
+                            />
+                            <FeaturedCard
+                                imageUrls={[
+                                    "https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/469718213_559281246999361_1247980601863416211_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6MlhvVDVHOQQ7kNvgEYm2JE&_nc_oc=AdhcHqnTGGOByPeeT-TBEDouKvgMAIWfybeyRFBVijZMwR6Qq9-UfmiKFzy0guxgLRs&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=AJYYchalMhGi3m5oEELcsAn&oh=00_AYC23d7gGWLzeTVUvjNKZ0JNqYRdXqck6gPGdBuE8DoZvw&oe=6786F419",
+                                    "https://via.placeholder.com/80",
+                                    "https://via.placeholder.com/80",
+                                ]}
+                                title="Project 1"
+                                description="Project Description"
+                                modalText="Test 1"
+                                className="mt-4"
+                            />
                             {/* <div className="grid grid-cols-3 gap-2">
                                 <img
                                     src="https://via.placeholder.com/80"
@@ -113,7 +136,9 @@ const Home = () => {
                             </div> */}
                         </Container>
                         <Container className="mt-4">
-                            <h2 className="mb-3 text-lg font-bold">Photos</h2>
+                            <h2 className="mb-3 text-lg font-bold">
+                                Work Experience
+                            </h2>
                             <div className="grid grid-cols-3 gap-2">
                                 <img
                                     src="https://via.placeholder.com/80"
