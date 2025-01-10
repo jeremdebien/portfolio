@@ -26,7 +26,7 @@ const Home = () => {
                             <img
                                 src={profile_picture}
                                 alt="Profile"
-                                className="h-w-48 w-48 rounded-full border-4 border-gray-800"
+                                className="w-48 rounded-full border-4 border-gray-800"
                             />
                         </div>
                     </div>
@@ -48,6 +48,7 @@ const Home = () => {
                         </div>
 
                         <hr className="mt-6 border-t border-gray-700" />
+
                         <Navbar />
                     </div>
                 </div>
@@ -156,7 +157,7 @@ const Home = () => {
                             </div>
                         </Container> */}
                         <Container>Post</Container>
-                        <Container className="mt-4">Hello</Container>
+                        <Container className="mt-4">Hello World!</Container>
                     </div>
                 </div>
             </div>
