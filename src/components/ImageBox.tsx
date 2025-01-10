@@ -38,7 +38,7 @@ const ImageBox: React.FC<ImageBoxProps> = ({
                 <img
                     src={src}
                     alt={alt}
-                    className={`${className} object-cover shadow-lg transition hover:shadow-xl`}
+                    className={`${className} object-cover transition hover:shadow-xl`}
                 />
 
                 {/* Overlay */}
