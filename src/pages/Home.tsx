@@ -1,4 +1,7 @@
 import profile_picture from "../assets/images/profile.jpg";
+import dost from "../assets/images/dost.png";
+import deli from "../assets/images/deli.png";
+import placeholder from "../assets/images/placeholder.png";
 import Container from "../components/Container";
 import Navbar from "../components/Navbar";
 import {
@@ -10,6 +13,7 @@ import {
 import Post from "../components/Post";
 import ImageBox from "../components/ImageBox";
 import FeaturedCard from "../components/FeaturedCard";
+import WorkExperience from "../components/WorkExperience";
 
 const Home = () => {
     return (
@@ -137,23 +141,45 @@ const Home = () => {
                         </Container>
                         <Container className="mt-4">
                             <h2 className="mb-3 text-lg font-bold">
-                                Work Experience
+                                Professional Experience
                             </h2>
-                            <div className="grid grid-cols-3 gap-2">
-                                <img
-                                    src="https://via.placeholder.com/80"
-                                    alt="Photo 1"
-                                    className="h-20 w-full rounded object-cover"
+                            <div className="space-y-4">
+                                <WorkExperience
+                                    company="Project LODI, DOST Central Office-PES-ITD"
+                                    logoUrl={dost}
+                                    position="System Developer Intern"
+                                    duration="Jun 2024 - Aug 2022"
+                                    responsibilities={[
+                                        "Developed features for a web application using PHP, Laravel as its framework, and Vue.js.",
+                                        "Implemented PDF generation of reports by collecting and processing relevant data.",
+                                        "Designed and implement email verification systems for user registration and password recovery functionalities.",
+                                        "Gained hands-on experience in full-stack development and enhanced technical problem-solving skills.",
+                                    ]}
                                 />
-                                <img
-                                    src="https://via.placeholder.com/80"
-                                    alt="Photo 2"
-                                    className="h-20 w-full rounded object-cover"
+                                <hr className="mt-6 border-t border-gray-700" />
+                                <WorkExperience
+                                    company="Deli - Restaurant Finder and Food Delivery"
+                                    logoUrl={deli}
+                                    position="Co-Founder & Social Media Manager"
+                                    duration="Jun 2020 - May 2021"
+                                    responsibilities={[
+                                        "Collaborated in founding and managing a local food delivery service.",
+                                        "Oversaw the company's online presence, creating and managing social media campaigns to enhance brand visibility and customer engagement.",
+                                        "Contributed to operational decision-making and service optimization in a fast-paced startup environment.",
+                                    ]}
                                 />
-                                <img
-                                    src="https://via.placeholder.com/80"
-                                    alt="Photo 3"
-                                    className="h-20 w-full rounded object-cover"
+                                <hr className="mt-6 border-t border-gray-700" />
+                                <WorkExperience
+                                    company="Freelance"
+                                    logoUrl={placeholder}
+                                    position="Freelance Administrative Assistant"
+                                    duration="Jun 2020 - May 2021"
+                                    responsibilities={[
+                                        "Provided transcription services by converting text from images into editable formats.",
+                                        "Performed web scraping to collect and organize data from online sources for analysis.",
+                                        "Assisted with data encoding and processing to ensure accurate record keeping.",
+                                        "Delivered high-quality work in a timely manner, ensuring attention to detail and accuracy.",
+                                    ]}
                                 />
                             </div>
                         </Container>
