@@ -5,9 +5,15 @@ interface ImageBoxProps {
     src: string;
     alt: string;
     className?: string;
+    y_offset?: number;
 }
 
-const ImageBox: React.FC<ImageBoxProps> = ({ src, alt, className = "" }) => {
+const ImageBox: React.FC<ImageBoxProps> = ({
+    src,
+    alt,
+    className = "",
+    y_offset = 0,
+}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     // Animation Variants
@@ -38,9 +44,9 @@ const ImageBox: React.FC<ImageBoxProps> = ({ src, alt, className = "" }) => {
                 {/* Overlay */}
                 <motion.div
                     className={`${className} absolute inset-0 bg-black bg-opacity-30`}
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
+                    initial={{ opacity: 0, y: `${y_offset}%` }}
+                    whileHover={{ opacity: 1, y: `${y_offset}%` }}
+                    transition={{ duration: 0.3, y: `${y_offset}%` }}
                 />
             </div>
 
