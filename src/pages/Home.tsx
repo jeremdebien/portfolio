@@ -8,6 +8,7 @@ import {
     FaLinkedin,
 } from "react-icons/fa";
 import Post from "../components/Post";
+import ImageBox from "../components/ImageBox";
 
 const Home = () => {
     return (
@@ -17,19 +18,17 @@ const Home = () => {
                 <div className="bg-gray-800">
                     {/* Cover Photo */}
                     <div className="relative mx-auto max-w-screen-xl">
-                        <img
+                        <ImageBox
                             src="https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/277101168_5161424857255454_1514321299478499819_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=XKOWYZW3AoIQ7kNvgGil4MP&_nc_oc=AdjlGDe8D6PNl1WirCK5oQNpxDD-HXnzjYxeLdKyQvq_ylsDOdfv-b0AQAlT9V6k7P8&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=AZ0ljDAgudmIIR_fxokODbL&oh=00_AYD1SRDxk9Io07Dss4ukWc3ETRP_hL1hrCybrvWLgXnRBw&oe=6784F5FF"
                             alt="Cover"
                             className="h-48 w-full rounded-bl-lg rounded-br-lg object-cover sm:h-96"
                         />
                         {/* Profile Picture */}
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-3/4 transform sm:left-8 sm:translate-x-0">
-                            <img
-                                src={profile_picture}
-                                alt="Profile"
-                                className="w-48 rounded-full border-4 border-gray-800"
-                            />
-                        </div>
+                        <ImageBox
+                            src={profile_picture}
+                            alt="Profile"
+                            className="absolute bottom-0 left-1/2 h-48 w-48 -translate-x-1/2 translate-y-3/4 transform rounded-full border-4 border-gray-800 sm:left-8 sm:translate-x-0"
+                        />
                     </div>
 
                     {/* Profile Info and Navigation */}
@@ -43,8 +42,8 @@ const Home = () => {
                                     929 friends
                                 </p>
                             </div>
-                            <button className="rounded-md bg-blue-600 px-4 py-2 font-medium hover:bg-blue-500">
-                                Add Friend
+                            <button className="ml-2 rounded-md bg-blue-600 px-4 py-2 font-medium hover:bg-blue-500">
+                                Message
                             </button>
                         </div>
 
@@ -57,9 +56,9 @@ const Home = () => {
                 {/* Profile Photo */}
 
                 {/* Main Content */}
-                <div className="mx-auto mt-6 grid max-w-screen-xl grid-cols-1 gap-6 px-8 md:grid-cols-3">
+                <div className="mx-auto mt-6 grid max-w-screen-xl grid-cols-1 gap-6 px-8 md:grid-cols-5">
                     {/* Left Column (Intro Section) */}
-                    <div className="md:col-span-1">
+                    <div className="md:col-span-2">
                         <Container>
                             <h2 className="mb-3 text-lg font-bold">Intro</h2>
                             <ul className="space-y-3">
@@ -92,8 +91,10 @@ const Home = () => {
                         </Container>
                         {/* Projects */}
                         <Container className="mt-4">
-                            <h2 className="mb-3 text-lg font-bold">Projects</h2>
-                            <div className="grid grid-cols-3 gap-2">
+                            <h2 className="mb-3 text-lg font-bold">
+                                Featured Projects
+                            </h2>
+                            {/* <div className="grid grid-cols-3 gap-2">
                                 <img
                                     src="https://via.placeholder.com/80"
                                     alt="Photo 1"
@@ -109,7 +110,7 @@ const Home = () => {
                                     alt="Photo 3"
                                     className="h-20 w-full rounded object-cover"
                                 />
-                            </div>
+                            </div> */}
                         </Container>
                         <Container className="mt-4">
                             <h2 className="mb-3 text-lg font-bold">Photos</h2>
@@ -134,7 +135,7 @@ const Home = () => {
                     </div>
 
                     {/* Main Column (Posts Section) */}
-                    <div className="md:col-span-2">
+                    <div className="md:col-span-3">
                         {/* <Container>
                             <h2 className="mb-3 text-lg font-bold">Posts</h2>
                             <div className="space-y-4">
@@ -159,6 +160,14 @@ const Home = () => {
                         </Container> */}
                         <Container>Post</Container>
                         <Post date="November 30, 2024">Hello World!</Post>
+                        <Post date="November 30, 2024">Hello World!</Post>
+                        <Post date="November 30, 2024">Hello World!</Post>
+                        <Post date="November 30, 2024">
+                            <ImageBox
+                                alt="Hello"
+                                src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/344764207_559739482963957_7775866385496566895_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pys7W3IALq4Q7kNvgGEYZjD&_nc_oc=AdhgjKX90wYuFMe-CNRWRGLTHSzh4SSOV4PYtejAm9LTqEvl0m8eVSsQUMlmIiiCo7U&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=Al5HbmVmSK-po5pG5utxxwr&oh=00_AYB2JDnp3VSmUlX2Myr5Y-JRJPycTePn-g8lfQKJIMUT8Q&oe=67870369"
+                            />
+                        </Post>
                     </div>
                 </div>
             </div>
