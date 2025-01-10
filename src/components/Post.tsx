@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import Container from "./Container";
 import { TfiComment } from "react-icons/tfi";
 import { FiThumbsUp } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 import profile_picture from "../assets/images/profile.jpg";
 import like from "../assets/images/like.png";
@@ -133,30 +134,61 @@ const Post = ({ children, date, className = "" }: PostProps) => {
                                 ? reactions[selectedReaction]?.text
                                 : "Like"}
                             {/* Reactions Menu */}
-                            {showReactions && (
-                                <div className="absolute bottom-full left-1/2 mb-2 flex -translate-x-1/2 transform rounded-full bg-gray-800">
-                                    {Object.entries(reactions).map(
-                                        ([key, { icon, text }]) => (
-                                            <div
-                                                key={key}
-                                                onClick={(e) => {
-                                                    e.stopPropagation(); // Prevent triggering the span's onClick
-                                                    handleReactionClick(
-                                                        key as ReactionType,
-                                                    );
-                                                }}
-                                                className="w-10 cursor-pointer"
-                                            >
-                                                <img
-                                                    src={icon}
-                                                    alt={text}
-                                                    className="h-10 w-10 object-contain"
-                                                />
-                                            </div>
-                                        ),
-                                    )}
-                                </div>
-                            )}
+                            <AnimatePresence>
+                                {showReactions && (
+                                    <motion.div
+                                        className="absolute bottom-full left-1/2 mb-2 flex -translate-x-1/2 transform rounded-full bg-gray-800"
+                                        initial={{
+                                            opacity: 0,
+                                            scale: 0.8,
+                                            y: 20,
+                                            x: "-50%",
+                                        }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                            y: 0,
+                                            x: "-50%",
+                                        }}
+                                        exit={{
+                                            opacity: 0,
+                                            scale: 0.8,
+                                            y: 20,
+                                            x: "-50%",
+                                        }}
+                                        transition={{ duration: 0.1 }}
+                                    >
+                                        {Object.entries(reactions).map(
+                                            ([key, { icon, text }]) => (
+                                                <div
+                                                    key={key}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation(); // Prevent triggering the span's onClick
+                                                        handleReactionClick(
+                                                            key as ReactionType,
+                                                        );
+                                                    }}
+                                                    className="w-10 cursor-pointer"
+                                                >
+                                                    <motion.img
+                                                        src={icon}
+                                                        alt={text}
+                                                        className="h-10 w-10 object-contain"
+                                                        initial={{ scale: 0.8 }}
+                                                        animate={{ scale: 1 }}
+                                                        whileHover={{
+                                                            scale: 1.7,
+                                                        }}
+                                                        whileTap={{
+                                                            scale: 0.9,
+                                                        }}
+                                                    />
+                                                </div>
+                                            ),
+                                        )}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </span>
                     </li>
                     <li className="flex items-center justify-center rounded-md py-1 hover:bg-gray-600">
