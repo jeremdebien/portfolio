@@ -12,7 +12,6 @@ import wow from "../assets/images/wow.png";
 import haha from "../assets/images/haha.png";
 import sad from "../assets/images/sad.png";
 import angry from "../assets/images/angry.png";
-import { div } from "framer-motion/client";
 
 interface PostProps {
     children: React.ReactNode;
