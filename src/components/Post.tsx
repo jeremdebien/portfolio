@@ -107,7 +107,7 @@ const Post = ({ children, date, className = "" }: PostProps) => {
                 {children}
 
                 {/* Likes & Comment Counts */}
-                <div className="my-3 flex items-center text-gray-400 hover:underline">
+                <div className="my-3 flex cursor-pointer items-center text-gray-400 hover:underline">
                     <img
                         src={love}
                         alt={love}
