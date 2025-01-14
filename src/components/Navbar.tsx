@@ -1,40 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 interface NavItemProps {
     label: string;
-    active: boolean;
-    onClick: () => void;
+    to: string;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ label, active, onClick }) => {
+const NavItem: React.FC<NavItemProps> = ({ label, to }) => {
     return (
-        <button
-            className={`px-4 py-3 font-semibold ${
-                active
-                    ? "border-b-2 border-blue-500 text-blue-500"
-                    : "rounded-lg text-gray-400 hover:bg-gray-600"
-            }`}
-            onClick={onClick}
+        <NavLink
+            to={to}
+            className={({ isActive }) =>
+                `px-4 py-3 font-semibold ${
+                    isActive
+                        ? "border-b-2 border-blue-500 text-blue-500"
+                        : "rounded-lg text-gray-400 hover:bg-gray-600"
+                }`
+            }
+            end
         >
             {label}
-        </button>
+        </NavLink>
     );
 };
 
 const Navbar: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState(0); // Track the active button index
-
-    const navItems = ["Posts", "About", "Projects", "Contact"];
+    const navItems = [
+        { label: "Home", to: "/portfolio" },
+        { label: "About", to: "/about" },
+        { label: "Projects", to: "/projects" },
+        { label: "Contact", to: "/contact" },
+    ];
 
     return (
         <nav className="flex pt-2">
-            {navItems.map((label, index) => (
-                <NavItem
-                    key={index}
-                    label={label}
-                    active={index === activeIndex}
-                    onClick={() => setActiveIndex(index)} // Update the active index
-                />
+            {navItems.map((item) => (
+                <NavItem key={item.to} label={item.label} to={item.to} />
             ))}
         </nav>
     );
