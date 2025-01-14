@@ -27,9 +27,9 @@ const NavItem: React.FC<NavItemProps> = ({ label, to }) => {
 const Navbar: React.FC = () => {
     const navItems = [
         { label: "Home", to: "/portfolio" },
-        { label: "About", to: "/about" },
-        { label: "Projects", to: "/projects" },
-        { label: "Contact", to: "/contact" },
+        { label: "About", to: "/portfolio/about" },
+        { label: "Projects", to: "/portfolio/projects" },
+        { label: "Contact", to: "/portfolio/contact" },
     ];
 
     return (
