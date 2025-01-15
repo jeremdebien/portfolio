@@ -87,10 +87,13 @@ const About = () => {
                             position="BS Information Technology"
                             duration="Aug 2021 - Present"
                             responsibilities={[
-                                "Developed features for a web application using PHP, Laravel as its framework, and Vue.js.",
-                                "Implemented PDF generation of reports by collecting and processing relevant data.",
-                                "Designed and implement email verification systems for user registration and password recovery functionalities.",
-                                "Gained hands-on experience in full-stack development and enhanced technical problem-solving skills.",
+                                "Developed a Machine Learning-based crop management system (HARVESTEER) using Django REST Framework and Flutter.",
+                                "Learned relevant technologies and tools for web development, including PHP, Laravel, Vue.js, HTML, CSS, JavaScript, and TypeScript.",
+                                "Gained expertise in database management, focusing on database design, querying, and optimization.",
+                                "Proficient in programming languages such as Java, Python, and implementing Object-Oriented Programming (OOP) concepts.",
+                                "Acquired knowledge of Agile methodologies, including project management frameworks like Scrum.",
+                                "Learned core principles of software engineering, including the software development life cycle and design patterns.",
+                                "Developed problem-solving skills in data structures and algorithms for efficient code implementation.",
                             ]}
                         />
                     </div>
