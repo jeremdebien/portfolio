@@ -1,9 +1,7 @@
-import profile_picture from "../assets/images/profile.jpg";
 import dost from "../assets/images/dost.png";
 import deli from "../assets/images/deli.png";
 import placeholder from "../assets/images/placeholder.png";
 import Container from "../components/Container";
-import Navbar from "../components/Navbar";
 import {
     FaEnvelope,
     FaPhoneAlt,
