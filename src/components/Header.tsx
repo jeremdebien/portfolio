@@ -6,9 +6,10 @@ import ImageBox from "../components/ImageBox";
 
 interface HeaderProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-const Header = ({ children }: HeaderProps) => {
+const Header = ({ children, className }: HeaderProps) => {
     return (
         <div className="min-h-screen bg-gray-900 text-gray-300">
             {/* Cover Photo */}
@@ -52,7 +53,9 @@ const Header = ({ children }: HeaderProps) => {
             {/* Profile Photo */}
 
             {/* Main Content */}
-            <div className="mx-auto mt-6 grid max-w-screen-xl grid-cols-1 gap-6 px-8 md:grid-cols-5">
+            <div
+                className={`${className} mx-auto mb-8 mt-6 grid max-w-screen-xl`}
+            >
                 {children}
             </div>
         </div>

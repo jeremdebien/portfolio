@@ -19,7 +19,7 @@ import Header from "../components/Header";
 const Home = () => {
     return (
         <>
-            <Header>
+            <Header className="grid-cols-1 gap-6 px-8 md:grid-cols-5">
                 {/* Left Column (Intro Section) */}
                 <div className="md:col-span-2">
                     <Container>
