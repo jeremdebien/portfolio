@@ -20,7 +20,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
         <>
             <div className="p-2">
                 {/* Company and Position */}
-                <div className="mb-2 flex items-center px-2">
+                <div className="mb-2 flex flex-col items-center justify-start px-2 lg:flex-row lg:items-start">
                     <ImageBox
                         src={logoUrl}
                         alt={company}
@@ -36,7 +36,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({
                 </div>
 
                 {/* Responsibilities */}
-                <ul className="ml-20 list-disc space-y-2 pl-6 text-justify">
+                <ul className="list-disc space-y-2 pl-6 text-justify lg:ml-20">
                     {responsibilities.map((task, idx) => (
                         <li key={idx} className="text-gray-400">
                             {task}
