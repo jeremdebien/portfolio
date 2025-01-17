@@ -32,6 +32,28 @@ const About = () => {
                         user-centered solutions.
                     </p>
                 </Container>
+                <Container className="my-4">
+                    <h2 className="text-lg font-bold">Education</h2>
+                </Container>
+                <Container className="mt-4">
+                    <div className="space-y-4">
+                        <WorkExperience
+                            company="Central Luzon State University"
+                            logoUrl={clsu}
+                            position="BS Information Technology"
+                            duration="Aug 2021 - Present"
+                            responsibilities={[
+                                "Developed a Machine Learning-based crop management system (HARVESTEER) using Django REST Framework and Flutter.",
+                                "Learned relevant technologies and tools for web development, including PHP, Laravel, Vue.js, HTML, CSS, JavaScript, and TypeScript.",
+                                "Gained expertise in database management, focusing on database design, querying, and optimization.",
+                                "Proficient in programming languages such as Java, Python, and implementing Object-Oriented Programming (OOP) concepts.",
+                                "Acquired knowledge of Agile methodologies, including project management frameworks like Scrum.",
+                                "Learned core principles of software engineering, including the software development life cycle and design patterns.",
+                                "Developed problem-solving skills in data structures and algorithms for efficient code implementation.",
+                            ]}
+                        />
+                    </div>
+                </Container>
             </div>
             <div className="md:col-span-3">
                 <Container className="mb-4">
@@ -76,28 +98,6 @@ const About = () => {
                                 "Performed web scraping to collect and organize data from online sources for analysis.",
                                 "Assisted with data encoding and processing to ensure accurate record keeping.",
                                 "Delivered high-quality work in a timely manner, ensuring attention to detail and accuracy.",
-                            ]}
-                        />
-                    </div>
-                </Container>
-                <Container className="my-4">
-                    <h2 className="text-lg font-bold">Education</h2>
-                </Container>
-                <Container className="mt-4">
-                    <div className="space-y-4">
-                        <WorkExperience
-                            company="Central Luzon State University"
-                            logoUrl={clsu}
-                            position="BS Information Technology"
-                            duration="Aug 2021 - Present"
-                            responsibilities={[
-                                "Developed a Machine Learning-based crop management system (HARVESTEER) using Django REST Framework and Flutter.",
-                                "Learned relevant technologies and tools for web development, including PHP, Laravel, Vue.js, HTML, CSS, JavaScript, and TypeScript.",
-                                "Gained expertise in database management, focusing on database design, querying, and optimization.",
-                                "Proficient in programming languages such as Java, Python, and implementing Object-Oriented Programming (OOP) concepts.",
-                                "Acquired knowledge of Agile methodologies, including project management frameworks like Scrum.",
-                                "Learned core principles of software engineering, including the software development life cycle and design patterns.",
-                                "Developed problem-solving skills in data structures and algorithms for efficient code implementation.",
                             ]}
                         />
                     </div>
