@@ -34,10 +34,12 @@ const About = () => {
                 </Container>
             </div>
             <div className="md:col-span-3">
-                <Container>
-                    <h2 className="mb-3 text-lg font-bold">
+                <Container className="mb-4">
+                    <h2 className="text-lg font-bold">
                         Professional Experience
                     </h2>
+                </Container>
+                <Container>
                     <div className="space-y-4">
                         <WorkExperience
                             company="Project LODI, DOST Central Office-PES-ITD"
@@ -78,8 +80,10 @@ const About = () => {
                         />
                     </div>
                 </Container>
+                <Container className="my-4">
+                    <h2 className="text-lg font-bold">Education</h2>
+                </Container>
                 <Container className="mt-4">
-                    <h2 className="mb-3 text-lg font-bold">Education</h2>
                     <div className="space-y-4">
                         <WorkExperience
                             company="Central Luzon State University"

@@ -61,7 +61,7 @@ const ImageBox: React.FC<ImageBoxProps> = ({
                     onClick={() => setIsOpen(false)}
                 >
                     <motion.div
-                        className="relative w-full max-w-6xl overflow-hidden rounded-lg bg-white shadow-lg"
+                        className="relative w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg"
                         variants={modal}
                         initial="hidden"
                         animate="visible"

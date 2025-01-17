@@ -18,6 +18,7 @@ const FeaturedCard: React.FC<CardProps> = ({
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isAccordionOpen, setIsAccordionOpen] = useState(true);
 
     // Backdrop Animation
     const backdropVariants = {
@@ -34,6 +35,10 @@ const FeaturedCard: React.FC<CardProps> = ({
             (prevIndex) =>
                 (prevIndex - 1 + imageUrls.length) % imageUrls.length,
         );
+    };
+
+    const selectImage = (index: number) => {
+        setCurrentImageIndex(index);
     };
 
     return (
@@ -111,10 +116,51 @@ const FeaturedCard: React.FC<CardProps> = ({
                             </div>
                         </div>
 
-                        {/* 30% Column (Text) */}
-                        <div className="col-span-1 flex flex-col justify-center p-6">
+                        {/* 30% Column (Text + Accordion) */}
+                        <div className="col-span-1 flex flex-col justify-start p-6">
                             <h2 className="mb-4 text-2xl font-bold">{title}</h2>
                             <p className="text-gray-700">{modalText}</p>
+
+                            {/* Accordion */}
+                            <div className="mt-6">
+                                <button
+                                    className="flex w-full items-center justify-between rounded border border-gray-300 bg-gray-100 px-4 py-2 text-left text-lg font-medium text-gray-700 hover:bg-gray-200"
+                                    onClick={() =>
+                                        setIsAccordionOpen(!isAccordionOpen)
+                                    }
+                                >
+                                    Gallery
+                                    <span className="ml-2">
+                                        {isAccordionOpen ? "-" : "+"}
+                                    </span>
+                                </button>
+
+                                {isAccordionOpen && (
+                                    <div className="mt-4 grid grid-cols-3 gap-2">
+                                        {imageUrls.map((url, index) => (
+                                            <div
+                                                key={index}
+                                                onClick={() =>
+                                                    selectImage(index)
+                                                }
+                                                className={`cursor-pointer overflow-hidden rounded border ${
+                                                    index === currentImageIndex
+                                                        ? "border-blue-500"
+                                                        : "border-gray-300"
+                                                }`}
+                                            >
+                                                <img
+                                                    src={url}
+                                                    alt={`Thumbnail ${
+                                                        index + 1
+                                                    }`}
+                                                    className="h-16 w-full object-cover"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </motion.div>
                 </motion.div>
