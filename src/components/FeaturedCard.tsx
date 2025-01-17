@@ -1,26 +1,34 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+interface ImageTextPair {
+    image: string;
+    text: string;
+}
+
 interface CardProps {
-    imageUrls: string[]; // List of image URLs
+    imageUrls: string[];
     title: string;
     description: string;
-    modalText: string;
+    technologies?: ImageTextPair[];
     className?: string;
+    coverImage?: string;
+    isShortenDescription?: boolean;
 }
 
 const FeaturedCard: React.FC<CardProps> = ({
     imageUrls,
     title,
     description,
-    modalText,
+    technologies,
     className = "",
+    coverImage,
+    isShortenDescription,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isAccordionOpen, setIsAccordionOpen] = useState(true);
 
-    // Backdrop Animation
     const backdropVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1 },
@@ -50,7 +58,7 @@ const FeaturedCard: React.FC<CardProps> = ({
             >
                 {/* Image */}
                 <motion.img
-                    src={imageUrls[currentImageIndex]}
+                    src={coverImage || imageUrls[currentImageIndex]}
                     alt={title}
                     className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                 />
@@ -59,7 +67,9 @@ const FeaturedCard: React.FC<CardProps> = ({
                 <motion.div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white opacity-0 transition-opacity duration-300 hover:opacity-100">
                     <h2 className="text-lg font-bold">{title}</h2>
                     <p className="mt-2 px-4 text-center text-sm">
-                        {description}
+                        {isShortenDescription
+                            ? `${description.slice(0, 100)}...`
+                            : description}
                     </p>
                 </motion.div>
             </div>
@@ -74,7 +84,7 @@ const FeaturedCard: React.FC<CardProps> = ({
                     exit="hidden"
                     onClick={() => setIsOpen(false)}
                 >
-                    {/* Modal Content with Grid Layout */}
+                    {/* Modal Content */}
                     <motion.div
                         className="relative grid w-full max-w-6xl grid-cols-3 gap-4 overflow-hidden rounded-lg bg-white shadow-lg"
                         onClick={(e) => e.stopPropagation()}
@@ -116,15 +126,46 @@ const FeaturedCard: React.FC<CardProps> = ({
                             </div>
                         </div>
 
-                        {/* 30% Column (Text + Accordion) */}
-                        <div className="col-span-1 flex flex-col justify-start p-6">
-                            <h2 className="mb-4 text-2xl font-bold">{title}</h2>
-                            <p className="text-gray-700">{modalText}</p>
+                        {/* 30% Column (Text + Technologies) */}
+                        <div className="col-span-1 flex flex-col justify-start p-6 pt-14">
+                            <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                                {title}
+                            </h2>
+                            <p className="mb-6 text-gray-700">{description}</p>
+
+                            {/* Technologies Section */}
+                            <div>
+                                {technologies && (
+                                    <h3 className="mb-2 text-lg font-medium text-gray-800">
+                                        Technologies Used:
+                                    </h3>
+                                )}
+                                <div className="flex flex-wrap gap-2">
+                                    {technologies &&
+                                        technologies.map((tech, index) => (
+                                            <div
+                                                key={index}
+                                                className="group relative flex flex-col items-center"
+                                            >
+                                                {/* Tech Image */}
+                                                <img
+                                                    src={tech.image}
+                                                    alt={tech.text}
+                                                    className="h-12 w-12 rounded-md object-contain shadow-sm"
+                                                />
+                                                {/* Tooltip */}
+                                                <div className="absolute left-1/2 top-14 w-max -translate-x-1/2 scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
+                                                    {tech.text}
+                                                </div>
+                                            </div>
+                                        ))}
+                                </div>
+                            </div>
 
                             {/* Accordion */}
                             <div className="mt-6">
                                 <button
-                                    className="flex w-full items-center justify-between rounded border border-gray-300 bg-gray-100 px-4 py-2 text-left text-lg font-medium text-gray-700 hover:bg-gray-200"
+                                    className="flex w-full items-center justify-between rounded px-4 py-2 text-left text-lg font-medium text-gray-700 hover:bg-gray-200"
                                     onClick={() =>
                                         setIsAccordionOpen(!isAccordionOpen)
                                     }
@@ -136,7 +177,7 @@ const FeaturedCard: React.FC<CardProps> = ({
                                 </button>
 
                                 {isAccordionOpen && (
-                                    <div className="mt-4 grid grid-cols-3 gap-2">
+                                    <div className="mt-4 grid grid-cols-3 gap-2 px-4">
                                         {imageUrls.map((url, index) => (
                                             <div
                                                 key={index}

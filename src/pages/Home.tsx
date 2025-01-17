@@ -14,6 +14,20 @@ import FeaturedCard from "../components/FeaturedCard";
 import WorkExperience from "../components/WorkExperience";
 import Header from "../components/Header";
 
+import html from "../assets/images/html.webp";
+import css from "../assets/images/css.png";
+import js from "../assets/images/js.png";
+
+import kk1 from "../assets/images/kusinero-kings/kk1.png";
+import kk2 from "../assets/images/kusinero-kings/kk2.png";
+import kk3 from "../assets/images/kusinero-kings/kk3.png";
+import kk4 from "../assets/images/kusinero-kings/kk4.png";
+
+import pp1 from "../assets/images/photography-portfolio/pp1.png";
+import pp2 from "../assets/images/photography-portfolio/pp2.png";
+import pp3 from "../assets/images/photography-portfolio/pp3.png";
+import pp4 from "../assets/images/photography-portfolio/pp4.png";
+
 const Home = () => {
     return (
         <>
@@ -52,30 +66,34 @@ const Home = () => {
                     </Container>
                     {/* Projects */}
                     <Container className="mt-4">
-                        <h2 className="mb-3 text-lg font-bold">
+                        <h2 className="= mb-3 text-lg font-bold">
                             Featured Projects
                         </h2>
-                        <FeaturedCard
-                            imageUrls={[
-                                "https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/469718213_559281246999361_1247980601863416211_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6MlhvVDVHOQQ7kNvgEYm2JE&_nc_oc=AdhcHqnTGGOByPeeT-TBEDouKvgMAIWfybeyRFBVijZMwR6Qq9-UfmiKFzy0guxgLRs&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=AJYYchalMhGi3m5oEELcsAn&oh=00_AYC23d7gGWLzeTVUvjNKZ0JNqYRdXqck6gPGdBuE8DoZvw&oe=6786F419",
-                                "https://via.placeholder.com/80",
-                                "https://via.placeholder.com/80",
-                            ]}
-                            title="Project 1"
-                            description="Project Description"
-                            modalText="Test 1"
-                        />
-                        <FeaturedCard
-                            imageUrls={[
-                                "https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/469718213_559281246999361_1247980601863416211_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6MlhvVDVHOQQ7kNvgEYm2JE&_nc_oc=AdhcHqnTGGOByPeeT-TBEDouKvgMAIWfybeyRFBVijZMwR6Qq9-UfmiKFzy0guxgLRs&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=AJYYchalMhGi3m5oEELcsAn&oh=00_AYC23d7gGWLzeTVUvjNKZ0JNqYRdXqck6gPGdBuE8DoZvw&oe=6786F419",
-                                "https://via.placeholder.com/80",
-                                "https://via.placeholder.com/80",
-                            ]}
-                            title="Project 1"
-                            description="Project Description"
-                            modalText="Test 1"
-                            className="mt-4"
-                        />
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                            <FeaturedCard
+                                imageUrls={[pp1, pp2, pp3, pp4]}
+                                title="Photography Portfolio"
+                                description="My photography portfolio is a sleek and minimalist web application built entirely with vanilla HTML and CSS. Designed to showcase my work elegantly, it features a responsive layout, intuitive navigation, and visually appealing galleries that highlight the artistry and storytelling of each photograph. This project emphasizes the power of simplicity and clean code in creating an impactful online presence"
+                                coverImage={pp1}
+                                technologies={[
+                                    { image: html, text: "HTML" },
+                                    { image: css, text: "CSS" },
+                                ]}
+                                isShortenDescription={true}
+                            />
+                            <FeaturedCard
+                                imageUrls={[kk1, kk2, kk3, kk4]}
+                                title="Kusinero Kings"
+                                description="Kusinero Kings is a dynamic restaurant website designed to spotlight the delicious offerings of the restaurant. Built using vanilla HTML, CSS, and JavaScript, it features an interactive menu, and a visually engaging design. The website provides a user-friendly experience, inviting visitors to explore the culinary delights and ambiance of Kusinero Kings."
+                                coverImage={kk1}
+                                technologies={[
+                                    { image: html, text: "HTML" },
+                                    { image: css, text: "CSS" },
+                                    { image: js, text: "JavaScript" },
+                                ]}
+                                isShortenDescription={true}
+                            />
+                        </div>
                     </Container>
                     <Container className="mt-4">
                         <h2 className="mb-3 text-lg font-bold">
@@ -132,7 +150,7 @@ const Home = () => {
                     <Post date="November 30, 2024">
                         <ImageBox
                             alt="Hello"
-                            src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/344764207_559739482963957_7775866385496566895_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pys7W3IALq4Q7kNvgGEYZjD&_nc_oc=AdhgjKX90wYuFMe-CNRWRGLTHSzh4SSOV4PYtejAm9LTqEvl0m8eVSsQUMlmIiiCo7U&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=Al5HbmVmSK-po5pG5utxxwr&oh=00_AYB2JDnp3VSmUlX2Myr5Y-JRJPycTePn-g8lfQKJIMUT8Q&oe=67870369"
+                            src="&_nc_oc=AdhgjKX90wYuFMe-CNRWRGLTHSzh4SSOV4PYtejAm9LTqEvl0m8eVSsQUMlmIiiCo7U&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=Al5HbmVmSK-po5pG5utxxwr&oh=00_AYB2JDnp3VSmUlX2Myr5Y-JRJPycTePn-g8lfQKJIMUT8Q&oe=67870369"
                         />
                     </Post>
                 </div>
