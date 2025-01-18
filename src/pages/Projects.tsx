@@ -18,6 +18,7 @@ const Projects = () => {
                             coverImage={project.coverImage}
                             technologies={project.technologies}
                             isShortenDescription={true}
+                            isShowTech={true}
                         />
                     ))}
                 </Container>

@@ -14,6 +14,7 @@ interface CardProps {
     className?: string;
     coverImage?: string;
     isShortenDescription?: boolean;
+    isShowTech?: boolean;
 }
 
 const FeaturedCard: React.FC<CardProps> = ({
@@ -24,6 +25,7 @@ const FeaturedCard: React.FC<CardProps> = ({
     className = "",
     coverImage,
     isShortenDescription,
+    isShowTech,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -64,6 +66,9 @@ const FeaturedCard: React.FC<CardProps> = ({
                 />
 
                 {/* Overlay */}
+                <div className="absolute inset-0 bg-opacity-50 bg-gradient-to-t from-gray-950 via-transparent"></div>
+
+                {/* Hover Overlay */}
                 <motion.div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white opacity-0 transition-opacity duration-300 hover:opacity-100">
                     <h2 className="text-lg font-bold">{title}</h2>
                     <p className="mt-2 px-4 text-center text-sm">
@@ -72,6 +77,29 @@ const FeaturedCard: React.FC<CardProps> = ({
                             : description}
                     </p>
                 </motion.div>
+
+                {/* Technology Thumbnails Overlay */}
+                {technologies && isShowTech && (
+                    <div className="absolute bottom-4 right-4 flex gap-2">
+                        {technologies.slice(0, 3).map((tech, index) => (
+                            <div
+                                key={index}
+                                className="group relative flex flex-col items-center"
+                            >
+                                {/* Tech Image */}
+                                <img
+                                    src={tech.image}
+                                    alt={tech.text}
+                                    className="h-10 rounded-md object-contain shadow-sm"
+                                />
+                                {/* Tooltip */}
+                                <div className="absolute -top-9 left-1/2 w-max -translate-x-1/2 scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
+                                    {tech.text}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
 
             {/* Modal */}
@@ -151,7 +179,7 @@ const FeaturedCard: React.FC<CardProps> = ({
                                                 <img
                                                     src={tech.image}
                                                     alt={tech.text}
-                                                    className="h-12 w-12 rounded-md object-contain shadow-sm"
+                                                    className="h-12 w-12 object-contain"
                                                 />
                                                 {/* Tooltip */}
                                                 <div className="absolute left-1/2 top-14 w-max -translate-x-1/2 scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
