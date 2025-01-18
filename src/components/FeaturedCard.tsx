@@ -86,7 +86,7 @@ const FeaturedCard: React.FC<CardProps> = ({
                 >
                     {/* Modal Content */}
                     <motion.div
-                        className="relative grid w-full max-w-6xl grid-cols-3 gap-4 overflow-hidden rounded-lg bg-white shadow-lg"
+                        className="relative grid h-[90vh] w-full max-w-6xl grid-cols-1 gap-4 overflow-hidden rounded-lg bg-white shadow-lg md:h-4/5 md:grid-cols-3"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Close Button */}
@@ -97,13 +97,13 @@ const FeaturedCard: React.FC<CardProps> = ({
                             &times;
                         </button>
 
-                        {/* 70% Column (Image) */}
-                        <div className="relative col-span-2 h-full">
+                        {/* Image Column (Responsive 70% on larger screens) */}
+                        <div className="relative col-span-2 h-full md:h-full">
                             <motion.img
                                 key={currentImageIndex}
                                 src={imageUrls[currentImageIndex]}
                                 alt={title}
-                                className="h-full w-full object-cover"
+                                className="h-full w-full object-contain"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
@@ -126,8 +126,8 @@ const FeaturedCard: React.FC<CardProps> = ({
                             </div>
                         </div>
 
-                        {/* 30% Column (Text + Technologies) */}
-                        <div className="col-span-1 flex flex-col justify-start p-6 pt-14">
+                        {/* Text Column (Responsive 30% on larger screens) */}
+                        <div className="col-span-1 flex h-full flex-col justify-start overflow-y-auto p-6 md:h-auto md:pt-14">
                             <h2 className="mb-4 text-2xl font-bold text-gray-900">
                                 {title}
                             </h2>
@@ -192,9 +192,7 @@ const FeaturedCard: React.FC<CardProps> = ({
                                             >
                                                 <img
                                                     src={url}
-                                                    alt={`Thumbnail ${
-                                                        index + 1
-                                                    }`}
+                                                    alt={`Thumbnail ${index + 1}`}
                                                     className="h-16 w-full object-cover"
                                                 />
                                             </div>
