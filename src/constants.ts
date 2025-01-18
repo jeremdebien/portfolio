@@ -10,6 +10,9 @@ import css from "./assets/images/css.png";
 import js from "./assets/images/js.png";
 import php from "./assets/images/php.png";
 import mysql from "./assets/images/mysql.webp";
+import flutter from "./assets/images/flutter.png";
+import dart from "./assets/images/dart.png";
+import firebase from "./assets/images/firebase.png";
 
 /* Kusinero Kings */
 import kk1 from "./assets/images/kusinero-kings/kk1.png";
@@ -29,6 +32,15 @@ import mv2 from "./assets/images/marvelusion/mv2.png";
 import mv3 from "./assets/images/marvelusion/mv3.png";
 import mv4 from "./assets/images/marvelusion/mv4.png";
 import mv5 from "./assets/images/marvelusion/mv5.png";
+
+/* Project EDU  */
+import edu1 from "./assets/images/projectedu/edu1.png";
+import edu2 from "./assets/images/projectedu/edu2.png";
+import edu3 from "./assets/images/projectedu/edu3.png";
+import edu4 from "./assets/images/projectedu/edu4.png";
+import edu5 from "./assets/images/projectedu/edu5.png";
+import edu6 from "./assets/images/projectedu/edu6.png";
+import educover from "./assets/images/projectedu/edu_cover.png";
 
 export const EDUCATION = [
     {
@@ -88,6 +100,18 @@ export const WORK_EXPERIENCE = [
 
 
   export const PROJECTS = [
+    {
+        imageUrls: [edu1, edu2, edu3, edu4, edu5, edu6],
+        title: "Project EDU",
+        description: 
+            "ProjectEDU is a management platform created using Flutterflow, Firebase, and custom Dart code, designed to streamline the management of educational data. Teachers can upload data from Excel files, eliminating the need for manual entry and reducing redundancy. The system consolidates various data points, attaching them to individual student profiles, and generates graphs for easy reporting on a dashboard. Additionally, ProjectEDU features a teacher profile where educators can track their achievements. The platform also includes PDF generation via web services API, making it a comprehensive tool for managing both student and teacher data efficiently.",
+        coverImage: educover,
+        technologies: [
+            { image: flutter, text: "Flutter" },
+            { image: firebase, text: "Firebase" },
+            { image: dart, text: "Dart" },
+        ],
+    },
     {
         imageUrls: [mv1, mv2, mv3, mv4, mv5],
         title: "Marvelusion",
