@@ -4,20 +4,31 @@ import clsu from "./assets/images/clsu.png";
 import placeholder from "./assets/images/placeholder.png";
 
 
-
+/* Technologies */
 import html from "./assets/images/html.webp";
 import css from "./assets/images/css.png";
 import js from "./assets/images/js.png";
+import php from "./assets/images/php.png";
+import mysql from "./assets/images/mysql.webp";
 
+/* Kusinero Kings */
 import kk1 from "./assets/images/kusinero-kings/kk1.png";
 import kk2 from "./assets/images/kusinero-kings/kk2.png";
 import kk3 from "./assets/images/kusinero-kings/kk3.png";
 import kk4 from "./assets/images/kusinero-kings/kk4.png";
 
+/* Photography Portfolio */
 import pp1 from "./assets/images/photography-portfolio/pp1.png";
 import pp2 from "./assets/images/photography-portfolio/pp2.png";
 import pp3 from "./assets/images/photography-portfolio/pp3.png";
 import pp4 from "./assets/images/photography-portfolio/pp4.png";
+
+/* Marvelusion */
+import mv1 from "./assets/images/marvelusion/mv1.png";
+import mv2 from "./assets/images/marvelusion/mv2.png";
+import mv3 from "./assets/images/marvelusion/mv3.png";
+import mv4 from "./assets/images/marvelusion/mv4.png";
+import mv5 from "./assets/images/marvelusion/mv5.png";
 
 export const EDUCATION = [
     {
@@ -78,6 +89,20 @@ export const WORK_EXPERIENCE = [
 
   export const PROJECTS = [
     {
+        imageUrls: [mv1, mv2, mv3, mv4, mv5],
+        title: "Marvelusion",
+        description: 
+            "Marvelusion is a dynamic movie booking web app built using vanilla PHP, HTML, CSS, JavaScript, and MySQL. It allows users to book movies, select seats, and leave reviews, creating an engaging cinema experience. The platform also features an admin dashboard for managing movies, schedules, and bookings, offering seamless operational control. Marvelusion combines simplicity and functionality, making movie-going more convenient for users and administrators alike.",
+        coverImage: mv1,
+        technologies: [
+            { image: php, text: "PHP" },
+            { image: mysql, text: "MySQL" },
+            { image: html, text: "HTML" },
+            { image: css, text: "CSS" },
+            { image: js, text: "JavaScript" },
+        ],
+    },
+    {
         imageUrls: [pp1, pp2, pp3, pp4],
         title: "Photography Portfolio",
         description:
@@ -100,4 +125,5 @@ export const WORK_EXPERIENCE = [
             { image: js, text: "JavaScript" },
         ],
     },
+   
 ];
