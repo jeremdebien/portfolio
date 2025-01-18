@@ -2,10 +2,7 @@ import Header from "../components/Header";
 import Container from "../components/Container";
 import WorkExperience from "../components/WorkExperience";
 
-import dost from "../assets/images/dost.png";
-import deli from "../assets/images/deli.png";
-import clsu from "../assets/images/clsu.png";
-import placeholder from "../assets/images/placeholder.png";
+import { EDUCATION, WORK_EXPERIENCE } from "../constants";
 
 const About = () => {
     return (
@@ -37,21 +34,16 @@ const About = () => {
                 </Container>
                 <Container className="mt-4">
                     <div className="space-y-4">
-                        <WorkExperience
-                            company="Central Luzon State University"
-                            logoUrl={clsu}
-                            position="BS Information Technology"
-                            duration="Aug 2021 - Present"
-                            responsibilities={[
-                                "Developed a Machine Learning-based crop management system (HARVESTEER) using Django REST Framework and Flutter.",
-                                "Learned relevant technologies and tools for web development, including PHP, Laravel, Vue.js, HTML, CSS, JavaScript, and TypeScript.",
-                                "Gained expertise in database management, focusing on database design, querying, and optimization.",
-                                "Proficient in programming languages such as Java, Python, and implementing Object-Oriented Programming (OOP) concepts.",
-                                "Acquired knowledge of Agile methodologies, including project management frameworks like Scrum.",
-                                "Learned core principles of software engineering, including the software development life cycle and design patterns.",
-                                "Developed problem-solving skills in data structures and algorithms for efficient code implementation.",
-                            ]}
-                        />
+                        {EDUCATION.map((edu, idx) => (
+                            <WorkExperience
+                                key={idx}
+                                company={edu.company}
+                                logoUrl={edu.logoUrl}
+                                position={edu.position}
+                                duration={edu.duration}
+                                responsibilities={edu.responsibilities}
+                            />
+                        ))}
                     </div>
                 </Container>
             </div>
@@ -63,43 +55,21 @@ const About = () => {
                 </Container>
                 <Container>
                     <div className="space-y-4">
-                        <WorkExperience
-                            company="Project LODI, DOST Central Office-PES-ITD"
-                            logoUrl={dost}
-                            position="System Developer Intern"
-                            duration="Jun 2024 - Aug 2022"
-                            responsibilities={[
-                                "Developed features for a web application using PHP, Laravel as its framework, and Vue.js.",
-                                "Implemented PDF generation of reports by collecting and processing relevant data.",
-                                "Designed and implement email verification systems for user registration and password recovery functionalities.",
-                                "Gained hands-on experience in full-stack development and enhanced technical problem-solving skills.",
-                            ]}
-                        />
-                        <hr className="mt-6 border-t border-gray-700" />
-                        <WorkExperience
-                            company="Deli - Restaurant Finder and Food Delivery"
-                            logoUrl={deli}
-                            position="Co-Founder & Social Media Manager"
-                            duration="Jun 2020 - May 2021"
-                            responsibilities={[
-                                "Collaborated in founding and managing a local food delivery service.",
-                                "Oversaw the company's online presence, creating and managing social media campaigns to enhance brand visibility and customer engagement.",
-                                "Contributed to operational decision-making and service optimization in a fast-paced startup environment.",
-                            ]}
-                        />
-                        <hr className="mt-6 border-t border-gray-700" />
-                        <WorkExperience
-                            company="Freelance"
-                            logoUrl={placeholder}
-                            position="Freelance Administrative Assistant"
-                            duration="Jun 2020 - May 2021"
-                            responsibilities={[
-                                "Provided transcription services by converting text from images into editable formats.",
-                                "Performed web scraping to collect and organize data from online sources for analysis.",
-                                "Assisted with data encoding and processing to ensure accurate record keeping.",
-                                "Delivered high-quality work in a timely manner, ensuring attention to detail and accuracy.",
-                            ]}
-                        />
+                        {WORK_EXPERIENCE.map((work, idx) => (
+                            <>
+                                <WorkExperience
+                                    key={idx}
+                                    company={work.company}
+                                    logoUrl={work.logoUrl}
+                                    position={work.position}
+                                    duration={work.duration}
+                                    responsibilities={work.responsibilities}
+                                />
+                                {idx != WORK_EXPERIENCE.length - 1 && (
+                                    <hr className="mt-6 border-t border-gray-700" />
+                                )}
+                            </>
+                        ))}
                     </div>
                 </Container>
             </div>
