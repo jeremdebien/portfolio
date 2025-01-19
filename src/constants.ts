@@ -10,9 +10,15 @@ import css from "./assets/images/css.png";
 import js from "./assets/images/js.png";
 import php from "./assets/images/php.png";
 import mysql from "./assets/images/mysql.webp";
-import flutter from "./assets/images/flutter.png";
 import dart from "./assets/images/dart.png";
 import firebase from "./assets/images/firebase.png";
+import flutterflow from "./assets/images/flutterflow.png";
+import flutter from "./assets/images/flutter.png";
+import python from "./assets/images/python.png";
+import django from "./assets/images/django.png";
+import postgre from "./assets/images/postgresql.png";
+import redis from "./assets/images/redis.png";
+
 
 /* Kusinero Kings */
 import kk1 from "./assets/images/kusinero-kings/kk1.png";
@@ -41,6 +47,26 @@ import edu4 from "./assets/images/projectedu/edu4.png";
 import edu5 from "./assets/images/projectedu/edu5.png";
 import edu6 from "./assets/images/projectedu/edu6.png";
 import educover from "./assets/images/projectedu/edu_cover.png";
+
+/* Kule */
+import kule from "./assets/images/kule/kule.png";
+import kule1 from "./assets/images/kule/kule1.png";
+import kule2 from "./assets/images/kule/kule2.png";
+import kule3 from "./assets/images/kule/kule3.png";
+import kule4 from "./assets/images/kule/kule4.png";
+import kule5 from "./assets/images/kule/kule5.png";
+
+
+/* Harvesteer */
+import harvesteer from "./assets/images/harvesteer/harvesteer.png";
+import harvesteer1 from "./assets/images/harvesteer/harvesteer1.png";
+import harvesteer2 from "./assets/images/harvesteer/harvesteer2.png";
+import harvesteer3 from "./assets/images/harvesteer/harvesteer3.png";
+import harvesteer4 from "./assets/images/harvesteer/harvesteer4.png";
+import harvesteer5 from "./assets/images/harvesteer/harvesteer5.png";
+import harvesteer6 from "./assets/images/harvesteer/harvesteer6.png";
+import harvesteer7 from "./assets/images/harvesteer/harvesteer7.png";
+
 
 export const EDUCATION = [
     {
@@ -101,13 +127,40 @@ export const WORK_EXPERIENCE = [
 
   export const PROJECTS = [
     {
+        imageUrls: [harvesteer1, harvesteer2, harvesteer3, harvesteer4, harvesteer5, harvesteer6, harvesteer7],
+        title: "Harvesteer",
+        description: 
+        "HARVESTEER is a Machine Learning-based crop management app designed to address challenges in traditional farming, such as inefficient data collection and labor management. My contributions included designing the system architecture, selecting tools such as networking devices and a Raspberry Pi for the local server, and configuring the weather API to provide real-time updates. I developed the backend using Django REST Framework. I worked on the mobile app using Dart and Flutter. The app integrates features such as real-time weather updates, interactive dashboards, farm performance insights, and timely alerts to optimize resource management.",
+        coverImage: harvesteer,
+        technologies: [
+            { image: flutter, text: "Flutter" },
+            { image: dart, text: "Dart" },
+            { image: django, text: "Django" },
+            { image: python, text: "Python" },
+            { image: postgre, text: "PostgreSQL" },
+            { image: redis, text: "Redis" },
+        ],
+    },
+    {
         imageUrls: [edu1, edu2, edu3, edu4, edu5, edu6],
         title: "Project EDU",
         description: 
             "ProjectEDU is a management platform created using Flutterflow, Firebase, and custom Dart code, designed to streamline the management of educational data. Teachers can upload data from Excel files, eliminating the need for manual entry and reducing redundancy. The system consolidates various data points, attaching them to individual student profiles, and generates graphs for easy reporting on a dashboard. Additionally, ProjectEDU features a teacher profile where educators can track their achievements. The platform also includes PDF generation via web services API, making it a comprehensive tool for managing both student and teacher data efficiently.",
         coverImage: educover,
         technologies: [
-            { image: flutter, text: "Flutter" },
+            { image: flutterflow, text: "FlutterFlow" },
+            { image: firebase, text: "Firebase" },
+            { image: dart, text: "Dart" },
+        ],
+    },
+    {
+        imageUrls: [kule1, kule2, kule3, kule4, kule5],
+        title: "Kule",
+        description: 
+            "A content production and tracking system designed to address challenges from disorganized information flow, including announcements, important events, target deliverables, and various paperwork such as meeting minutes, articles, and multimedia materials, across multiple tools like shared documents and text messages. The system streamlines the organization's processes by automating information forwarding based on a defined hierarchical structure, batch scanning QR codes for efficient attendance tracking, and offering easier and centralized access to all publication data.",
+        coverImage: kule,
+        technologies: [
+            { image: flutterflow, text: "FlutterFlow" },
             { image: firebase, text: "Firebase" },
             { image: dart, text: "Dart" },
         ],
@@ -149,5 +202,6 @@ export const WORK_EXPERIENCE = [
             { image: js, text: "JavaScript" },
         ],
     },
+
    
 ];

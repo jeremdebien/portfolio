@@ -81,6 +81,7 @@ const FeaturedCard: React.FC<CardProps> = ({
                 {/* Technology Thumbnails Overlay */}
                 {technologies && isShowTech && (
                     <div className="absolute bottom-4 right-4 flex gap-2">
+                        {/* Render the first three technologies */}
                         {technologies.slice(0, 3).map((tech, index) => (
                             <div
                                 key={index}
@@ -98,6 +99,21 @@ const FeaturedCard: React.FC<CardProps> = ({
                                 </div>
                             </div>
                         ))}
+
+                        {/* +X indicator with tooltip */}
+                        {technologies.length > 3 && (
+                            <div className="group relative flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white shadow-sm">
+                                <span className="text-sm font-bold">
+                                    +{technologies.length - 3}
+                                </span>
+                                {/* Tooltip for remaining technologies */}
+                                <div className="absolute -top-9 left-1/2 w-max -translate-x-1/2 scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
+                                    {technologies.slice(3).map((tech) => (
+                                        <div key={tech.text}>{tech.text}</div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 )}
             </div>

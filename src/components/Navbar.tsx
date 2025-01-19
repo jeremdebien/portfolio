@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
         { label: "Home", to: "/portfolio" },
         { label: "About", to: "/portfolio/about" },
         { label: "Projects", to: "/portfolio/projects" },
-        { label: "Contact", to: "/portfolio/contact" },
+        // { label: "Contact", to: "/portfolio/contact" },
     ];
 
     return (
