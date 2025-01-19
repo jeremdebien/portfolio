@@ -1,7 +1,7 @@
 import dost from "./assets/images/dost.png";
-import deli from "./assets/images/deli.png";
+// import deli from "./assets/images/deli.png";
 import clsu from "./assets/images/clsu.png";
-import placeholder from "./assets/images/placeholder.png";
+// import placeholder from "./assets/images/placeholder.png";
 
 
 /* Technologies */
