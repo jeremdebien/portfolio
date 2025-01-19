@@ -18,7 +18,9 @@ import python from "./assets/images/python.png";
 import django from "./assets/images/django.png";
 import postgre from "./assets/images/postgresql.png";
 import redis from "./assets/images/redis.png";
-
+import tailwind from "./assets/images/tailwind.png";
+import react from "./assets/images/react.png";
+import typescript from "./assets/images/typescript.png";
 
 /* Kusinero Kings */
 import kk1 from "./assets/images/kusinero-kings/kk1.png";
@@ -67,6 +69,12 @@ import harvesteer5 from "./assets/images/harvesteer/harvesteer5.png";
 import harvesteer6 from "./assets/images/harvesteer/harvesteer6.png";
 import harvesteer7 from "./assets/images/harvesteer/harvesteer7.png";
 
+/* React Portfolio */
+import portfolio1 from "./assets/images/portfolio/portfolio1.png";
+import portfolio2 from "./assets/images/portfolio/portfolio2.png";
+import portfolio3 from "./assets/images/portfolio/portfolio3.png";
+import portfolio4 from "./assets/images/portfolio/portfolio4.png";
+
 
 export const EDUCATION = [
     {
@@ -99,33 +107,45 @@ export const WORK_EXPERIENCE = [
         "Gained hands-on experience in full-stack development and enhanced technical problem-solving skills.",
       ],
     },
-    {
-      company: "Deli - Restaurant Finder and Food Delivery",
-      logoUrl: deli,
-      position: "Co-Founder & Social Media Manager",
-      duration: "Jun 2020 - May 2021",
-      responsibilities: [
-        "Collaborated in founding and managing a local food delivery service.",
-        "Oversaw the company's online presence, creating and managing social media campaigns to enhance brand visibility and customer engagement.",
-        "Contributed to operational decision-making and service optimization in a fast-paced startup environment.",
-      ],
-    },
-    {
-      company: "Freelance",
-      logoUrl: placeholder,
-      position: "Freelance Administrative Assistant",
-      duration: "Jun 2020 - May 2021",
-      responsibilities: [
-        "Provided transcription services by converting text from images into editable formats.",
-        "Performed web scraping to collect and organize data from online sources for analysis.",
-        "Assisted with data encoding and processing to ensure accurate record-keeping.",
-        "Delivered high-quality work in a timely manner, ensuring attention to detail and accuracy.",
-      ],
-    },
+    // {
+    //   company: "Deli - Restaurant Finder and Food Delivery",
+    //   logoUrl: deli,
+    //   position: "Co-Founder & Social Media Manager",
+    //   duration: "Jun 2020 - May 2021",
+    //   responsibilities: [
+    //     "Collaborated in founding and managing a local food delivery service.",
+    //     "Oversaw the company's online presence, creating and managing social media campaigns to enhance brand visibility and customer engagement.",
+    //     "Contributed to operational decision-making and service optimization in a fast-paced startup environment.",
+    //   ],
+    // },
+    // {
+    //   company: "Freelance",
+    //   logoUrl: placeholder,
+    //   position: "Freelance Administrative Assistant",
+    //   duration: "Jun 2020 - May 2021",
+    //   responsibilities: [
+    //     "Provided transcription services by converting text from images into editable formats.",
+    //     "Performed web scraping to collect and organize data from online sources for analysis.",
+    //     "Assisted with data encoding and processing to ensure accurate record-keeping.",
+    //     "Delivered high-quality work in a timely manner, ensuring attention to detail and accuracy.",
+    //   ],
+    // },
   ];
 
 
   export const PROJECTS = [
+    {
+        imageUrls: [portfolio1, portfolio2, portfolio3, portfolio4],
+        title: "React Portfolio",
+        description: 
+        "React Portfolio is my professional portfolio built using React, TypeScript, and Tailwind CSS. It showcases my skills, projects, and achievements as a web and mobile developer. I designed it to be modern, responsive, and easy to navigate, highlighting my expertise and the work I’m most proud of.",
+        coverImage: portfolio1,
+        technologies: [
+            { image: react, text: "React" },
+            { image: typescript, text: "TypeScript" },
+            { image: tailwind, text: "Tailwind CSS" },
+        ],
+    },
     {
         imageUrls: [harvesteer1, harvesteer2, harvesteer3, harvesteer4, harvesteer5, harvesteer6, harvesteer7],
         title: "Harvesteer",

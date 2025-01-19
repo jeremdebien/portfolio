@@ -11,6 +11,10 @@ import FeaturedCard from "../components/FeaturedCard";
 import WorkExperience from "../components/WorkExperience";
 import Header from "../components/Header";
 
+import topcit from "../assets/images/topcit.png";
+import lodi from "../assets/images/lodi.png";
+import aws from "../assets/images/aws.png";
+
 import { WORK_EXPERIENCE, PROJECTS } from "../constants";
 
 const Home = () => {
@@ -94,16 +98,31 @@ const Home = () => {
 
                 {/* Main Column (Posts Section) */}
                 <div className="md:col-span-3">
-                    <Container>Post</Container>
-                    <Post date="November 30, 2024">Hello World!</Post>
-                    <Post date="November 30, 2024">Hello World!</Post>
-                    <Post date="November 30, 2024">Hello World!</Post>
-                    <Post date="November 30, 2024">
-                        <ImageBox
-                            alt="Hello"
-                            src="&_nc_oc=AdhgjKX90wYuFMe-CNRWRGLTHSzh4SSOV4PYtejAm9LTqEvl0m8eVSsQUMlmIiiCo7U&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=Al5HbmVmSK-po5pG5utxxwr&oh=00_AYB2JDnp3VSmUlX2Myr5Y-JRJPycTePn-g8lfQKJIMUT8Q&oe=67870369"
-                        />
+                    <Container>
+                        <h2 className="text-lg font-bold">Certificates</h2>
+                    </Container>
+                    <Post date="December 17, 2024">
+                        I'm proud to share that I have completed the AWS Academy
+                        Cloud Foundation course! 🎉 Here's my certificate of
+                        completion
+                        <ImageBox alt="AWS Certificate" src={aws} />
                     </Post>
+                    <Post date="August 9, 2024">
+                        Yay!! I’ve successfully completed my 400-hour training
+                        under the DOST’s Project LODI (Learning Opportunity and
+                        Development Initiative)! 🎉 It was such an enriching
+                        experience filled with learning and growth!
+                        <ImageBox alt="Project LODI Certificate" src={lodi} />
+                    </Post>
+                    <Post date="August 8, 2024">
+                        I just got my certificate from TOPCIT (Test of Practical
+                        Competency in ICT). I got a score which is equivalent to
+                        a Level 3 certification. I'm so happy to have passed the
+                        exam and I'm looking forward to taking more exams in the
+                        future.
+                        <ImageBox alt="TOPCIT Certificate" src={topcit} />
+                    </Post>
+                    <Post date="August 2021">Hello World!</Post>
                 </div>
             </Header>
         </>

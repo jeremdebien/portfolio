@@ -37,7 +37,9 @@ const Header = ({ children, className }: HeaderProps) => {
                             <h1 className="text-3xl font-bold">
                                 Jeremiah de Bien
                             </h1>
-                            <p className="text-sm text-gray-400">929 friends</p>
+                            <p className="text-xl text-gray-400">
+                                Software Engineer
+                            </p>
                         </div>
                         <button className="ml-2 rounded-md bg-blue-600 px-4 py-2 font-medium hover:bg-blue-500">
                             Message
